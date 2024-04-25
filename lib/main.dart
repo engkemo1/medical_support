@@ -1,12 +1,19 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medical_support/constants.dart';
 
 import 'core/database/cache/cache_helper.dart';
 import 'features/splash/presentation/view/splash_view.dart';
 
 main() async {
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: kPrimaryColor,
+    ),
+  );
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper().init();
   runApp(

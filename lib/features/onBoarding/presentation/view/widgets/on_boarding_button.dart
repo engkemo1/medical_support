@@ -16,7 +16,7 @@ class OnBoardingButton extends StatelessWidget {
         Navigator.pushReplacement(
           context,
           AppRouter.router(
-            const RouteSettings(name: AppRouter.kLogInView),
+            const RouteSettings(name: AppRouter.kLogoView),
           ),
         );
         CacheHelper().put(key: "onBoarding", value: true);

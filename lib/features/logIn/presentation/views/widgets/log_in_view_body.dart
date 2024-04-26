@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_support/constants.dart';
+import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/styles.dart';
 import 'package:medical_support/features/logIn/presentation/views/widgets/log_in_section.dart';
 import 'package:medical_support/features/logIn/presentation/views/widgets/sign_up_section.dart';
@@ -65,7 +66,7 @@ class _SignUpState extends State<LogInViewBody>
                         ),
                         Text(
                           "من فضلك قم بتسجيل الدخول او قم بانشاء حساب جديد",
-                          style: Styles.textStyle20,
+                          style: Styles.textStyle20ColorWhite,
                         ),
                       ],
                     ),
@@ -91,10 +92,10 @@ class _SignUpState extends State<LogInViewBody>
                               controller: tabController,
                               tabs: const [
                                 Tab(
-                                  text: 'حساب جديد',
+                                  text: 'تسجيل الدخول',
                                 ),
                                 Tab(
-                                  text: 'تسجيل الدخول',
+                                  text: 'حساب جديد',
                                 ),
                               ],
                               labelStyle: Styles.textStyle24,
@@ -105,8 +106,8 @@ class _SignUpState extends State<LogInViewBody>
                               child: TabBarView(
                                 controller: tabController,
                                 children: const [
-                                  SignUpSection(),
                                   LogInSection(),
+                                  SignUpSection(),
                                 ],
                               ),
                             ),
@@ -127,7 +128,16 @@ class _SignUpState extends State<LogInViewBody>
                             color: Colors.transparent,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            AppRouter.router(
+                              const RouteSettings(
+                                name: AppRouter.kHomeView,
+                              ),
+                            ),
+                          );
+                        },
                         child: const Icon(
                           Icons.arrow_back,
                           color: kPrimaryColor,

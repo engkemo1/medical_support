@@ -22,18 +22,18 @@ class OnBoardingBody extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.fill,
             ),
-          const Spacer(),
-            const Text(
+            const Spacer(),
+            Text(
               "نتمنى لك زيارة سعيدة",
-              style: Styles.textStyle35,
+              style: Styles.textStyle35.copyWith(color: Colors.black),
             ),
             SizedBox(
               height: 10.sp,
             ),
             Text(
               "خدمتنا 24 ساعة لك ",
-              style: Styles.textStyle24
-                  .copyWith(color: const Color(0xff7C7C7C)),
+              style:
+                  Styles.textStyle24.copyWith(color: const Color(0xff7C7C7C)),
             ),
             SizedBox(
               height: 40.sp,

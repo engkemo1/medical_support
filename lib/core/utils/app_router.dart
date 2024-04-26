@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:medical_support/features/home/presentation/views/home_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/log_in_view.dart';
+import 'package:medical_support/features/logIn/presentation/views/logo_view.dart';
 import 'package:medical_support/features/onBoarding/presentation/view/on_boarding_view.dart';
 import 'package:medical_support/features/splash/presentation/view/splash_view.dart';
 
 abstract class AppRouter {
   static const kSplash = '/';
   static const kOnBoarding = '/onBoarding';
+  static const kLogoView = '/kLogoView';
   static const kLogInView = '/login';
   static const kHomeView = '/home';
 
@@ -20,6 +22,10 @@ abstract class AppRouter {
       case kOnBoarding:
         return MaterialPageRoute(builder: (context) {
           return const OnBoardingView(); //replace this Scaffold with a on boarding Screen
+        });
+      case kLogoView:
+        return MaterialPageRoute(builder: (context) {
+          return const LogoView(); //replace this Scaffold with a on boarding Screen
         });
 
       case kLogInView:

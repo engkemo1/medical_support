@@ -15,15 +15,25 @@ abstract class Styles {
     fontWeight: FontWeight.w600,
   );
 
-  static const textStyle20 = TextStyle(
+  static const textStyle20ColorWhite  = TextStyle(
     fontSize: 20,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
+  static const textStyle20  = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
 
+  static const textStyle24ColorWhite = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
   static const textStyle24 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600,
+
   );
 
   static const textStyle26 = TextStyle(

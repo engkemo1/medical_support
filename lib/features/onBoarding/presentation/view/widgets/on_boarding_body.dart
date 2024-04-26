@@ -25,7 +25,7 @@ class OnBoardingBody extends StatelessWidget {
           const Spacer(),
             const Text(
               "نتمنى لك زيارة سعيدة",
-              style: Styles.textStyle48,
+              style: Styles.textStyle35,
             ),
             SizedBox(
               height: 10.sp,

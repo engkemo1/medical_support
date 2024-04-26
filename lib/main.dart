@@ -11,7 +11,7 @@ import 'features/splash/presentation/view/splash_view.dart';
 main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: kPrimaryColor,
+      statusBarColor: Colors.transparent,
     ),
   );
   WidgetsFlutterBinding.ensureInitialized();

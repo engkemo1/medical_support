@@ -8,7 +8,8 @@ class CustomTextField extends StatelessWidget {
     this.onChanged,
     this.onSaved,
     required this.keyboardType,
-    this.obscureText = false, required this.labelText,
+    this.obscureText = false,
+    required this.labelText,
   });
 
   final Widget prefixIcon;
@@ -16,43 +17,34 @@ class CustomTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscureText;
 
-
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: kPrimaryColor,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return "Field is required";
-        } else {
-          return null;
-        }
-      },
 
+      cursorColor: kPrimaryColor,
       onSaved: onSaved,
       onChanged: onChanged,
       obscureText: obscureText,
       decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.grey.shade300,
         prefixIcon: prefixIcon,
-        label:  Text(labelText),
+        hintText: labelText,
         suffixIconColor: kGreyColor,
-        enabledBorder:  OutlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50.0),
-          borderSide: const BorderSide(
-          ),
+          borderSide: const BorderSide(),
         ),
-        focusedBorder:
-        OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50.0),
           borderSide: const BorderSide(
             color: kPrimaryColor,
           ),
         ),
-        errorBorder:  OutlineInputBorder(
+        errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50.0),
           borderSide: const BorderSide(
             color: Colors.red,

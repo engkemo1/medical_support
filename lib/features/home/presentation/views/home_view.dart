@@ -6,8 +6,9 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeViewBody();
+    return const Directionality(
+      textDirection: TextDirection.rtl,
+      child: HomeViewBody(),
+    );
   }
 }
-
-

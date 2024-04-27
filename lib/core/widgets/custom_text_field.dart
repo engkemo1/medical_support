@@ -23,15 +23,12 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
       cursorColor: kPrimaryColor,
       onSaved: onSaved,
       onChanged: onChanged,
       obscureText: obscureText,
       decoration: InputDecoration(
-        filled: true,
-        fillColor: Colors.grey.shade300,
-        prefixIcon: prefixIcon,
+                                     prefixIcon: prefixIcon,
         hintText: labelText,
         suffixIconColor: kGreyColor,
         enabledBorder: OutlineInputBorder(

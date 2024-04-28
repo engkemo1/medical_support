@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_support/features/cart/presentation/views/cart_view.dart';
 import 'package:medical_support/features/home/presentation/views/home_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/log_in_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/logo_view.dart';
@@ -11,6 +12,9 @@ abstract class AppRouter {
   static const kLogoView = '/kLogoView';
   static const kLogInView = '/login';
   static const kHomeView = '/home';
+  static const kCartView = '/cart';
+
+
 
 
   static Route<Object?> router(RouteSettings settings) {
@@ -38,6 +42,10 @@ abstract class AppRouter {
           return const HomeView(); //replace this Scaffold with a Home Screen
         });
 
+      case kCartView:
+        return MaterialPageRoute(builder: (context) {
+          return const CartView(); //replace this Scaffold with a Home Screen
+        });
 
       default:
         return MaterialPageRoute(builder: (context) {

@@ -129,7 +129,7 @@ class _SignUpState extends State<LogInViewBody>
                           ),
                         ),
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             AppRouter.router(
                               const RouteSettings(

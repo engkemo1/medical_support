@@ -16,7 +16,13 @@ class CustomAppBar extends StatelessWidget {
       leading: IconButton(
         color: Colors.white,
         iconSize: 30.sp,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            AppRouter.router(
+              const RouteSettings(name: AppRouter.kDrawerView),
+            ),
+          );
+        },
         icon: const Icon(
           Icons.menu,
         ),

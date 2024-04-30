@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/assets.dart';
 import 'package:medical_support/core/utils/styles.dart';
 
@@ -11,7 +12,15 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(
+          AppRouter.router(
+            const RouteSettings(
+              name: AppRouter.kMedicinesView,
+            ),
+          ),
+        );
+      },
       child: Stack(
         clipBehavior: Clip.none,
         children: [

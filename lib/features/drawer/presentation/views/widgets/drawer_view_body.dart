@@ -15,17 +15,24 @@ class DrawerViewBody extends StatelessWidget {
         width: double.infinity,
         backgroundColor: kPrimaryColor,
         child: ListView(
+          padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
+            DrawerHeader(
+              padding: EdgeInsets.zero,
                 child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                  size: 35,
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.menu,
+                    color: Colors.white,
+                    size: 35,
+                  ),
                 ),
-                Divider(
+                const Divider(
                   color: Colors.white,
                   endIndent: 320,
                   thickness: 4,

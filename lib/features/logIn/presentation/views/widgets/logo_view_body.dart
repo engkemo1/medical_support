@@ -42,7 +42,7 @@ class LogoViewBody extends StatelessWidget {
           CustomButton(
               text: "صيدلية",
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   AppRouter.router(
                     const RouteSettings(name: AppRouter.kLogInView),
@@ -55,7 +55,7 @@ class LogoViewBody extends StatelessWidget {
           CustomButton(
               text: "طبيب",
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   AppRouter.router(
                     const RouteSettings(name: AppRouter.kLogInView),

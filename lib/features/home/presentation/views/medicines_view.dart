@@ -7,6 +7,9 @@ class MedicinesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MedicinesViewBody() ;
+    return const Directionality(
+      textDirection: TextDirection.rtl,
+      child: MedicinesViewBody(),
+    );
   }
 }

@@ -58,7 +58,10 @@ class _CartViewBodyState extends State<CartViewBody> {
       ),
       body: Column(
         children: [
-          const CustomAppBar(title: "السلة"),
+          CustomAppBar(
+            title: "السلة",
+            isBack: true,
+          ),
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.zero,

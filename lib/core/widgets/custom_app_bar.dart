@@ -5,9 +5,11 @@ import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/styles.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({super.key, required this.title, this.isBack = false});
 
   final String title;
+
+  final bool isBack;
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +39,20 @@ class CustomAppBar extends StatelessWidget {
           child: IconButton(
             color: Colors.white,
             iconSize: 30.sp,
-            onPressed: () {
-              Navigator.of(context).push(
-                AppRouter.router(
-                  const RouteSettings(name: AppRouter.kCartView),
-                ),
-              );
-            },
-            icon: const Icon(Icons.shopping_cart),
+            onPressed: isBack
+                ? () {
+                    Navigator.of(context).pop();
+                  }
+                : () {
+                    Navigator.of(context).push(
+                      AppRouter.router(
+                        const RouteSettings(name: AppRouter.kCartView),
+                      ),
+                    );
+                  },
+            icon:  Icon(
+                isBack?Icons.arrow_forward_ios:
+                Icons.shopping_cart),
           ),
         )
       ],

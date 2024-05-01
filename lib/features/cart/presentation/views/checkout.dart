@@ -6,6 +6,9 @@ class CheckOut extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const CheckOutBody();
+    return const Directionality(
+      textDirection: TextDirection.rtl,
+      child: CheckOutBody(),
+    );
   }
 }

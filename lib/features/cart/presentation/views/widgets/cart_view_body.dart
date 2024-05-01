@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_support/constants.dart';
+import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/assets.dart';
 import 'package:medical_support/core/utils/styles.dart';
 import 'package:medical_support/core/widgets/custom_app_bar.dart';
@@ -44,7 +45,13 @@ class _CartViewBodyState extends State<CartViewBody> {
                 borderRadius: BorderRadius.circular(20),
               ),
               color: const Color(0xff7C88F2),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  AppRouter.router(
+                    const RouteSettings(name: AppRouter.kCheckOutView),
+                  ),
+                );
+              },
               child: const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
@@ -58,7 +65,7 @@ class _CartViewBodyState extends State<CartViewBody> {
       ),
       body: Column(
         children: [
-          CustomAppBar(
+          const CustomAppBar(
             title: "السلة",
             isBack: true,
           ),

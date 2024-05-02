@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medical_support/features/cart/presentation/views/cart_view.dart';
 import 'package:medical_support/features/cart/presentation/views/checkout.dart';
+import 'package:medical_support/features/compalints/presentation/views/compalints_view.dart';
+import 'package:medical_support/features/contactUs/presentation/views/contact_us_view.dart';
 import 'package:medical_support/features/drawer/presentation/views/drawer_view.dart';
 import 'package:medical_support/features/home/presentation/views/details_view.dart';
 import 'package:medical_support/features/home/presentation/views/home_view.dart';
@@ -21,6 +23,8 @@ abstract class AppRouter {
   static const kDrawerView = '/drawer';
   static const kMedicinesView = '/Medicines';
   static const kDetailsView = '/Details';
+  static const kContactUsView = '/ContactUs';
+  static const kCompalintsView = '/Compalints';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -70,6 +74,16 @@ abstract class AppRouter {
       case kCheckOutView:
         return MaterialPageRoute(builder: (context) {
           return const CheckOut(); //replace this Scaffold with a Home Screen
+        });
+
+      case kContactUsView:
+        return MaterialPageRoute(builder: (context) {
+          return const ContactUsView(); //replace this Scaffold with a Home Screen
+        });
+
+      case kCompalintsView:
+        return MaterialPageRoute(builder: (context) {
+          return const CompalintsView(); //replace this Scaffold with a Home Screen
         });
 
       default:

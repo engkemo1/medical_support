@@ -18,27 +18,27 @@ class DrawerViewBody extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              padding: EdgeInsets.zero,
+                padding: EdgeInsets.zero,
                 child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                    size: 35,
-                  ),
-                ),
-                const Divider(
-                  color: Colors.white,
-                  endIndent: 320,
-                  thickness: 4,
-                )
-              ],
-            )),
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                        size: 35,
+                      ),
+                    ),
+                    const Divider(
+                      color: Colors.white,
+                      endIndent: 320,
+                      thickness: 4,
+                    )
+                  ],
+                )),
             ListTile(
               onTap: () {
                 Navigator.of(context).push(
@@ -73,7 +73,15 @@ class DrawerViewBody extends StatelessWidget {
               thickness: 2,
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  AppRouter.router(
+                    const RouteSettings(
+                      name: AppRouter.kCompalintsView,
+                    ),
+                  ),
+                );
+              },
               leading: const Icon(
                 size: 33,
                 Icons.chat_outlined,
@@ -86,7 +94,15 @@ class DrawerViewBody extends StatelessWidget {
               thickness: 2,
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  AppRouter.router(
+                    const RouteSettings(
+                      name: AppRouter.kContactUsView,
+                    ),
+                  ),
+                );
+              },
               leading: const Icon(
                 size: 33,
                 Icons.contact_phone_outlined,

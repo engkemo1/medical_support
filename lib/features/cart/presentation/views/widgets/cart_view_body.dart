@@ -38,7 +38,7 @@ class _CartViewBodyState extends State<CartViewBody> {
           children: [
             const Text(
               "السعر الكلى :459.00 LE",
-              style: Styles.textStyle24,
+              style: Styles.textStyle24ColorWhite,
             ),
             MaterialButton(
               shape: RoundedRectangleBorder(

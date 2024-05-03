@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/assets.dart';
 import 'package:medical_support/core/utils/styles.dart';
 import 'package:medical_support/core/widgets/custom_app_bar.dart';
@@ -38,6 +39,14 @@ class NewProductViewBody extends StatelessWidget {
                         ],
                       ),
                       child: ListTile(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            AppRouter.router(
+                              const RouteSettings(name: AppRouter.kDetailsView),
+                            ),
+                          );
+                        },
                         contentPadding: const EdgeInsets.all(16.0),
                         leading: Image.asset(
                           Assets.enzymaxTest,

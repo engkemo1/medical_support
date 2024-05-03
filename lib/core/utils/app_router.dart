@@ -9,9 +9,9 @@ import 'package:medical_support/features/home/presentation/views/home_view.dart'
 import 'package:medical_support/features/home/presentation/views/medicines_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/log_in_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/logo_view.dart';
-import 'package:medical_support/features/newProduct/presentation/views/widgets/new_product_view_body.dart';
-import 'package:medical_support/features/onBoarding/presentation/view/on_boarding_view.dart';
+import 'package:medical_support/features/newProduct/presentation/views/new_product_view.dart';
 import 'package:medical_support/features/splash/presentation/view/splash_view.dart';
+import '../../features/onBoarding/presentation/view/on_boarding_view.dart';
 
 abstract class AppRouter {
   static const kSplash = '/';

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_support/constants.dart';
 import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/styles.dart';
@@ -123,7 +125,53 @@ class DrawerViewBody extends StatelessWidget {
               thickness: 2,
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: AlertDialog(
+                          title: const Text(
+                            "هل انت متاكد من الخروج؟",
+                            style: Styles.textStyle28,
+                          ),
+                          actionsAlignment: MainAxisAlignment.center,
+                          actions: [
+                            MaterialButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              shape: RoundedRectangleBorder(
+                                side: const BorderSide(color: Colors.black),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Text(
+                                "لا",
+                                style: Styles.textStyle20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            MaterialButton(
+                              onPressed: () {
+                                SystemNavigator.pop();
+                              },
+                              shape: RoundedRectangleBorder(
+                                side: const BorderSide(color: Colors.black),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Text(
+                                "نعم",
+                                style: Styles.textStyle20,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    });
+              },
               leading: const Icon(
                 size: 33,
                 Icons.output,

@@ -9,6 +9,7 @@ import 'package:medical_support/features/home/presentation/views/home_view.dart'
 import 'package:medical_support/features/home/presentation/views/medicines_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/log_in_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/logo_view.dart';
+import 'package:medical_support/features/newProduct/presentation/views/widgets/new_product_view_body.dart';
 import 'package:medical_support/features/onBoarding/presentation/view/on_boarding_view.dart';
 import 'package:medical_support/features/splash/presentation/view/splash_view.dart';
 
@@ -25,6 +26,7 @@ abstract class AppRouter {
   static const kDetailsView = '/Details';
   static const kContactUsView = '/ContactUs';
   static const kCompalintsView = '/Compalints';
+  static const kNewProduct = '/newProduct';
 
   static Route<Object?> router(RouteSettings settings) {
     switch (settings.name) {
@@ -84,6 +86,11 @@ abstract class AppRouter {
       case kCompalintsView:
         return MaterialPageRoute(builder: (context) {
           return const CompalintsView(); //replace this Scaffold with a Home Screen
+        });
+
+      case kNewProduct:
+        return MaterialPageRoute(builder: (context) {
+          return const NewProductView(); //replace this Scaffold with a Home Screen
         });
 
       default:

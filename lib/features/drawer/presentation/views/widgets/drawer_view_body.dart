@@ -60,7 +60,15 @@ class DrawerViewBody extends StatelessWidget {
               thickness: 2,
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  AppRouter.router(
+                    const RouteSettings(
+                      name: AppRouter.kNewProduct,
+                    ),
+                  ),
+                );
+              },
               leading: const Icon(
                 size: 33,
                 Icons.add_box_outlined,

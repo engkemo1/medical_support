@@ -20,6 +20,7 @@ class GridViewBuilder extends StatelessWidget {
         },
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
+          crossAxisSpacing: 10,
           mainAxisSpacing: 30,
         ),
       ),

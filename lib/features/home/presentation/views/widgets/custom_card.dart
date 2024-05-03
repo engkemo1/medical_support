@@ -28,17 +28,18 @@ class CustomCard extends StatelessWidget {
             width: 180.w,
             height: 220.h,
             decoration: BoxDecoration(
-              boxShadow: [
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.white,
+              boxShadow: const [
                 BoxShadow(
-                  color: Colors.grey.shade500,
-                  spreadRadius: 0.0001,
-                  blurRadius: 10,
-                  offset: const Offset(3, 3),
+                  color: Colors.grey,
+                  blurRadius: 2,
+                  offset: Offset(0, 5),
                 ),
               ],
             ),
             child: const Card(
-              color: Colors.white,
+              elevation: 0,
               child: Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Column(

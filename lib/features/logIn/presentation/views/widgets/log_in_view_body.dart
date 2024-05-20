@@ -30,7 +30,6 @@ class _SignUpState extends State<LogInViewBody>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = TabController(length: 2, vsync: this);
   }

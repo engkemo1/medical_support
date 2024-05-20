@@ -9,20 +9,19 @@ class GridViewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 60.0.sp),
-      child: GridView.builder(
-        physics: const BouncingScrollPhysics(),
-        clipBehavior: Clip.none,
-        itemCount: 20,
-        itemBuilder: (BuildContext context, int index) {
-          return const CustomCard();
-        },
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 30,
-        ),
+    return GridView.builder(
+      padding: EdgeInsets.zero,
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      clipBehavior: Clip.none,
+      itemCount: 20,
+      itemBuilder: (BuildContext context, int index) {
+        return const CustomCard();
+      },
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 30,
       ),
     );
   }

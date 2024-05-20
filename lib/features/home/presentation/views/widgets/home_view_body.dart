@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_support/core/widgets/custom_app_bar.dart';
 import 'package:medical_support/core/widgets/custom_text_field.dart';
-
 import 'grid_view_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -16,11 +13,23 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
-        SizedBox(
-          height: double.infinity,
+        SingleChildScrollView(
           child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 8.0.sp),
-            child: const GridViewBuilder(),
+            padding: EdgeInsets.only(left: 8.sp, right: 8.0.sp, top: 85.sp),
+            child: Column(
+              children: [
+                const CustomTextField(
+                    prefixIcon: Icon(
+                      Icons.search,
+                    ),
+                    keyboardType: TextInputType.text,
+                    labelText: "البحث"),
+                SizedBox(
+                  height: 10.h,
+                ),
+                const GridViewBuilder(),
+              ],
+            ),
           ),
         ),
         const Column(

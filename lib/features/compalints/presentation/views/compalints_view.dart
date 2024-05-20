@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'widgets/compalints_view_body.dart';
 
 class CompalintsView extends StatelessWidget {

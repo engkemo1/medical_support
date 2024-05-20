@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_support/constants.dart';
@@ -78,7 +77,7 @@ class CompalintsViewBody extends StatelessWidget {
                           color: kPrimaryColor,
                           minWidth: 120.w,
                           height: 40.h,
-                          child: Text(
+                          child: const Text(
                             'ارسال',
                             style: Styles.textStyle20ColorWhite,
                           ),

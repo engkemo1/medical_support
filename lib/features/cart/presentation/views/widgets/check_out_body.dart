@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:medical_support/core/utils/styles.dart';
 import 'package:medical_support/core/widgets/custom_app_bar.dart';
-
 import '../../../../../constants.dart';
 
 class CheckOutBody extends StatelessWidget {
@@ -99,7 +96,7 @@ class CheckOutBody extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: RadioListTile(
-                              fillColor: MaterialStateProperty.all(Colors.white),
+                              fillColor: WidgetStateProperty.all(Colors.white),
                               value: "dds",
                               title: const Text(
                                 "عن طريقة البطاقة ",
@@ -123,7 +120,7 @@ class CheckOutBody extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: RadioListTile(
-                              fillColor: MaterialStateProperty.all(Colors.white),
+                              fillColor: WidgetStateProperty.all(Colors.white),
                               value: "dds",
                               title: const Text(
                                 "عند التسليم",

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_support/features/cart/presentation/views/widgets/check_out_bodu.dart';
+import 'package:medical_support/features/cart/presentation/views/widgets/check_out_body.dart';
 
 class CheckOut extends StatelessWidget {
   const CheckOut({super.key});

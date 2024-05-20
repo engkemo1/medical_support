@@ -5,12 +5,11 @@ import 'package:medical_support/constants.dart';
 import 'package:medical_support/core/database/cache/cache_helper.dart';
 import 'package:medical_support/core/utils/assets.dart';
 import 'package:medical_support/core/utils/styles.dart';
-import 'package:medical_support/features/logIn/presentation/views/log_in_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/logo_view.dart';
 import 'package:medical_support/features/onBoarding/presentation/view/on_boarding_view.dart';
 
 class SplashPage extends StatelessWidget {
-  SplashPage({Key? key}) : super(key: key);
+  SplashPage({super.key});
 
   final bool onBoarding = CacheHelper().getData(key: "onBoarding") ?? false;
 

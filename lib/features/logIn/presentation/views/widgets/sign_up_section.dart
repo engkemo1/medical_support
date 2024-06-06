@@ -57,7 +57,7 @@ class _SignUpSectionState extends State<SignUpSection> {
             labelText: 'الاسم',
           ),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
           const CustomTextField(
             keyboardType: TextInputType.emailAddress,
@@ -67,7 +67,7 @@ class _SignUpSectionState extends State<SignUpSection> {
             labelText: 'البريد الالكترونى',
           ),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
           const CustomTextField(
             obscureText: true,
@@ -78,7 +78,7 @@ class _SignUpSectionState extends State<SignUpSection> {
             labelText: 'كلمة السر ',
           ),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
           const CustomTextField(
             keyboardType: TextInputType.phone,
@@ -87,20 +87,35 @@ class _SignUpSectionState extends State<SignUpSection> {
             ),
             labelText: 'الهاتف',
           ),
-          DropdownButton<String>(
-            value: selectedGovernorate,
+          SizedBox(
+            height: 10.h,
+          ),
+          Card(
+            shadowColor: Colors.grey,
+            elevation: 5,
+            child: Directionality(
+              textDirection: TextDirection.ltr,
+              child: DropdownButton<String>(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                underline: Container(
+                  height: 2,
+                  color: Colors.transparent,
+                ),
+                value: selectedGovernorate,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    selectedGovernorate = newValue;
+                  });
+                },
+                items: governorates.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
 
-            onChanged: (String? newValue) {
-              setState(() {
-                selectedGovernorate = newValue;
-              });
-            },
-            items: governorates.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
+              ),
+            ),
           )
         ],
       ),

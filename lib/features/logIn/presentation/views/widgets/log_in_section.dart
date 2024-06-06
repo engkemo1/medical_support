@@ -30,7 +30,7 @@ class _LogInSectionState extends State<LogInSection> {
             labelText: 'البريد الالكترونى',
           ),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
           const CustomTextField(
             obscureText: true,

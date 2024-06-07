@@ -1,14 +1,14 @@
 class EndPoint {
-  static String baseUrl =
-      "";
-  static String login = "";
+  static String baseUrl = "https://mydoctory.net/example-app/public/api/";
+  static String login = "login";
 }
 
 class ApiKeys {
-  static String token = "";
-  static String username = "";
+  static String token = "token";
+  static String userId = "id";
+  static String username = "name";
+  static String email = "email";
+  static String states = "states";
   static String password = "";
-  static String email = "";
-  static String phoneNumber = "";
   static String confirmPassword = "";
 }

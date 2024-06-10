@@ -5,14 +5,17 @@ import 'package:medical_support/core/utils/styles.dart';
 import 'package:medical_support/core/widgets/custom_app_bar.dart';
 import 'package:medical_support/features/home/presentation/views/widgets/bottom_navigation_bar_body.dart';
 
+import '../../../../../model/product_model.dart';
+
 class DetailsViewBody extends StatelessWidget {
-  const DetailsViewBody({super.key});
+   DetailsViewBody({super.key,required this.productModel});
+  ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottomNavigationBarBody(),
-      body: Column(
+      bottomNavigationBar:  BottomNavigationBarBody(productModel: productModel,),
+      body: ListView(
         children: [
           const CustomAppBar(title: "التفاصيل"),
           Padding(
@@ -21,12 +24,16 @@ class DetailsViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Image.asset(
-                  Assets.enzymaxTest,
-                  width: double.infinity,
-                  height: 300.h,
-                  fit: BoxFit.cover,
+                Image.network(
+                  productModel.image.toString(),
+                  errorBuilder: (context , o , e)=>Image.asset(
+                    Assets.logo,
+                    width: 100,
+                    height: 300,
+                  ),
+                  height: 300,
                 ),
+
                 SizedBox(
                   height: 20.h,
                 ),
@@ -34,7 +41,7 @@ class DetailsViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "Enzymax",
+                      productModel.name.toString(),
                       style: Styles.textStyle35.copyWith(
                         color: Colors.black,
                       ),
@@ -44,15 +51,15 @@ class DetailsViewBody extends StatelessWidget {
                 SizedBox(
                   height: 10.h,
                 ),
-                const Text(
-                  "المرض : اجهاز الهضمي ",
+                 Text(
+                  " المرض : ${productModel.type}",
                   style: Styles.textStyle20,
                 ),
                 SizedBox(
                   height: 10.h,
                 ),
-                const Text(
-                  "الوصف : لعلج مشاكل عسر العضم",
+                 Text(
+                  "الوصف : ${productModel.description}",
                   style: Styles.textStyle20,
                 ),
                 SizedBox(
@@ -68,11 +75,10 @@ class DetailsViewBody extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "80 L.E ",
+                      "${productModel.price} L.E ",
                       textDirection: TextDirection.ltr,
                       style: Styles.textStyle28.copyWith(
                         fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.lineThrough,
                         decorationColor: Colors.red,
                         decorationThickness: 2,
                       ),
@@ -81,24 +87,6 @@ class DetailsViewBody extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 15.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "بعد الخصم",
-                      style: Styles.textStyle28.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      "60 L.E ",
-                      textDirection: TextDirection.ltr,
-                      style: Styles.textStyle28.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),

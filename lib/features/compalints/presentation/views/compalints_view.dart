@@ -6,7 +6,7 @@ class CompalintsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Directionality(
+    return  Directionality(
       textDirection: TextDirection.rtl,
       child: CompalintsViewBody(),
     );

@@ -4,6 +4,7 @@ import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/assets.dart';
 import 'package:medical_support/core/utils/styles.dart';
 import 'package:medical_support/core/widgets/custom_button.dart';
+import 'package:medical_support/features/doctor/doctor.dart';
 
 class LogoViewBody extends StatelessWidget {
   const LogoViewBody({super.key});
@@ -55,12 +56,7 @@ class LogoViewBody extends StatelessWidget {
           CustomButton(
               text: "طبيب",
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  AppRouter.router(
-                    const RouteSettings(name: AppRouter.kLogInView),
-                  ),
-                );
+                Navigator.push(context, MaterialPageRoute(builder: (_)=> Doctor()));
               }),
         ],
       ),

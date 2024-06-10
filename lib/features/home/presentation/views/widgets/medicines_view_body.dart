@@ -3,9 +3,16 @@ import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/assets.dart';
 import 'package:medical_support/core/utils/styles.dart';
 import 'package:medical_support/core/widgets/custom_app_bar.dart';
+import 'package:medical_support/features/home/presentation/views/details_view.dart';
+
+import '../../../../../model/product_model.dart';
 
 class MedicinesViewBody extends StatelessWidget {
-  const MedicinesViewBody({super.key});
+  MedicinesViewBody(
+      {super.key, required this.listProducts, required this.title});
+
+  List<ProductModel> listProducts = [];
+  String title;
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +20,11 @@ class MedicinesViewBody extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const CustomAppBar(title: "الجهاز الهضمي"),
+          CustomAppBar(title: title,isBack: true,),
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.zero,
-              itemCount: 20,
+              itemCount: listProducts.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -37,25 +44,29 @@ class MedicinesViewBody extends StatelessWidget {
                       ),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(
-                            AppRouter.router(
-                              const RouteSettings(
-                                name: AppRouter.kDetailsView,
-                              ),
-                            ),
-                          );
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => DetailsView(
+                                        productModel: listProducts[index],
+                                      )));
                         },
                         child: ListTile(
-                          title: const Text(
-                            "Enzymax",
+                          title: Text(
+                            listProducts[index].name.toString(),
                             style: Styles.textStyle28,
                           ),
-                          subtitle: const Text(
-                            "أقراص",
+                          subtitle: Text(
+                            listProducts[index].type.toString(),
                             style: Styles.textStyle14,
                           ),
-                          trailing: Image.asset(
-                            Assets.enzymaxTest,
+                          trailing: Image.network(
+                            listProducts[index].image.toString(),
+                            errorBuilder: (context , o , e)=>Image.asset(
+                              Assets.logo,
+                              width: 100,
+                              height: 100,
+                            ),
                             width: 100,
                             height: 100,
                           ),

@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:medical_support/constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+   CustomTextField({
     super.key,
     required this.prefixIcon,
     this.onChanged,
+     this.validator,
     this.onSaved,
     required this.keyboardType,
     this.obscureText = false,
-    required this.labelText,
+    required this.labelText, required this.controller,
   });
-
+   String? Function(String?)?validator;
   final Widget prefixIcon;
   final String labelText;
   final TextInputType keyboardType;
   final bool obscureText;
+  final TextEditingController controller ;
 
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
@@ -23,10 +25,12 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       cursorColor: kPrimaryColor,
       onSaved: onSaved,
       onChanged: onChanged,
       obscureText: obscureText,
+      validator: validator,
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
         hintText: labelText,

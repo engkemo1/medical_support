@@ -13,8 +13,6 @@ class LogInCubit extends Cubit<LogInState> {
 
   final ApiConsumer api;
   LogInModel? logInModel;
-  // SignUpModel? signUpModel;
-  // UserModel ? userModel;
 
   //Sign in Form key
   GlobalKey<FormState> logInFormKey = GlobalKey();
@@ -25,81 +23,6 @@ class LogInCubit extends Cubit<LogInState> {
   //Sign in password
    TextEditingController logInPassword = TextEditingController();
 
-  // //Sign Up Form key
-  // GlobalKey<FormState> signUpFormKey = GlobalKey();
-  //
-  // //Profile Pic
-  //  XFile? profilePic;
-  //
-  // //Sign up name
-  // TextEditingController signUpName = TextEditingController();
-  //
-  // //Sign up phone number
-  // TextEditingController signUpPhoneNumber = TextEditingController();
-  //
-  // //Sign up email
-  // TextEditingController signUpEmail = TextEditingController();
-  //
-  // //Sign up password
-  // TextEditingController signUpPassword = TextEditingController();
-  //
-  // //Sign up confirm password
-  // TextEditingController confirmPassword = TextEditingController();
-
-  // uploadImagePic(XFile image) {
-  //   profilePic = image;
-  //   emit(UploadImageSuccess());
-  // }
-
-  // getUserData() async {
-  //   emit(UserLoading());
-  //   try {
-  //     var response = await api.get(
-  //       EndPoint.getUserDataEndPoint(
-  //         CacheHelper().getData(key: ApiKeys.userId),
-  //       ),
-  //     );
-  //     userModel = UserModel.fromJson(response);
-  //     emit(UserSuccess(
-  //       userModel!,
-  //     ));
-  //   } on ServerException catch (e) {
-  //     emit(
-  //       UserFailed(errorMessage: e.errorModel.errorMessage),
-  //     );
-  //   }
-  // }
-
-  // signUp() async {
-  //   emit(SingUpLoading());
-  //   try {
-  //     var response = await api.post(
-  //       EndPoint.signUp,
-  //       isFormData: true,
-  //       body: {
-  //         ApiKeys.name: signUpName.text,
-  //         ApiKeys.email: signUpEmail.text,
-  //         ApiKeys.password: signUpPassword.text,
-  //         ApiKeys.confirmPassword: confirmPassword.text,
-  //         ApiKeys.phone: signUpPhoneNumber.text,
-  //         ApiKeys.location:
-  //         '{"name":"methalfa","address":"meet halfa","coordinates":[30.1572709,31.224779]}',
-  //         ApiKeys.profilePic: await MultipartFile.fromFile(
-  //           profilePic!.path,
-  //           filename: profilePic!.name,
-  //         ),
-  //       },
-  //     );
-  //     signUpModel = SignUpModel.fromJson(response);
-  //     emit(SingUpSuccess(
-  //       signUpModel!.message!,
-  //     ));
-  //   } on ServerException catch (e) {
-  //     emit(
-  //       SingUpFailed(errorMessage: e.errorModel.errorMessage),
-  //     );
-  //   }
-  // }
 
   logIn() async {
     emit(LogInLoading());

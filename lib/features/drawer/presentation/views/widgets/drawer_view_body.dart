@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_support/constants.dart';
 import 'package:medical_support/core/utils/app_router.dart';
 import 'package:medical_support/core/utils/styles.dart';
+import 'package:medical_support/features/orders/orders_screen.dart';
+import 'package:medical_support/view_model/cubit/category_cubit/category_cubit.dart';
+
+import '../../../../../core/database/cache/cache_helper.dart';
+import '../../../../logIn/presentation/views/logo_view.dart';
 
 class DrawerViewBody extends StatelessWidget {
   const DrawerViewBody({
@@ -84,6 +90,19 @@ class DrawerViewBody extends StatelessWidget {
             ),
             ListTile(
               onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>const OrderScreen()));
+              },
+              leading: const Icon(
+                size: 33,
+                Icons.shopping_bag_outlined,
+                color: Colors.white,
+              ),
+              title: const Text("الطلبات ",
+                  style: Styles.textStyle24ColorWhite),
+            ),
+Divider(),
+            ListTile(
+              onTap: () {
                 Navigator.of(context).push(
                   AppRouter.router(
                     const RouteSettings(
@@ -156,7 +175,14 @@ class DrawerViewBody extends StatelessWidget {
                             ),
                             MaterialButton(
                               onPressed: () {
-                                SystemNavigator.pop();
+                                context.read<CategoryCubit>().cart.clear();
+                                CacheHelper().clearData(key: 'token');
+                                CacheHelper().clearData(key: 'name');
+                                CacheHelper().clearData(key: 'name');
+                                CacheHelper().clearData(key: 'role');
+
+                                CacheHelper().clearData(key: 'email');
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>LogoView()));
                               },
                               shape: RoundedRectangleBorder(
                                 side: const BorderSide(color: Colors.black),

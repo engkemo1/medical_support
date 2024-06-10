@@ -42,12 +42,16 @@ class _DropDownButtonState extends State<DropDownButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shadowColor: Colors.grey,
-      elevation: 5,
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      width: double.infinity,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(color: Colors.black)),
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: DropdownButton<String>(
+          isExpanded: true,
           padding: const EdgeInsets.symmetric(horizontal: 8),
           underline: Container(
             height: 2,
@@ -61,11 +65,10 @@ class _DropDownButtonState extends State<DropDownButton> {
           },
           items: governorates.map<DropdownMenuItem<String>>((String value) {
             return DropdownMenuItem<String>(
-              value: value,
+              value: value,alignment: Alignment.center,
               child: Text(value),
             );
           }).toList(),
-
         ),
       ),
     );

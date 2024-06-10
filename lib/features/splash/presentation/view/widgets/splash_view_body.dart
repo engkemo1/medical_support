@@ -5,6 +5,8 @@ import 'package:medical_support/constants.dart';
 import 'package:medical_support/core/database/cache/cache_helper.dart';
 import 'package:medical_support/core/utils/assets.dart';
 import 'package:medical_support/core/utils/styles.dart';
+import 'package:medical_support/features/admin/home_admin_screen.dart';
+import 'package:medical_support/features/home/presentation/views/home_view.dart';
 import 'package:medical_support/features/logIn/presentation/views/logo_view.dart';
 import 'package:medical_support/features/onBoarding/presentation/view/on_boarding_view.dart';
 
@@ -31,7 +33,13 @@ class SplashPage extends StatelessWidget {
         width: 130.w,
       ),
       showLoader: false,
-      navigator: onBoarding ? const LogoView() : const OnBoardingView(),
+      navigator: onBoarding
+          ? CacheHelper().getData(key: "token") != null
+              ? CacheHelper().getData(key: "role") == "Admin"
+                  ? HomeAdminScreen()
+                  : const HomeView()
+              : const LogoView()
+          : const OnBoardingView(),
       durationInSeconds: 3,
     );
   }

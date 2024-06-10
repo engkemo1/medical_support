@@ -44,8 +44,8 @@ dependencies:
   easy_splash_screen: ^1.0.4
   statusbarz: ^1.0.14
   flutter_launcher_icons: ^0.13.1
-
-
+  flutter_smart_dialog: 
+  image_picker:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true

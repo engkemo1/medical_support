@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_support/constants.dart';
+import 'package:medical_support/core/database/cache/cache_helper.dart';
 import 'package:medical_support/core/utils/styles.dart';
 import 'package:medical_support/core/widgets/custom_app_bar.dart';
+import 'package:medical_support/view_model/cubit/compliants_cubit/compliants_cubit.dart';
 
 class CompalintsViewBody extends StatelessWidget {
-  const CompalintsViewBody({
+   CompalintsViewBody({
     super.key,
   });
-
+TextEditingController compliantController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +39,7 @@ class CompalintsViewBody extends StatelessWidget {
                     ),
                     TextField(
                       maxLines: 5,
+                      controller:compliantController ,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -70,7 +73,11 @@ class CompalintsViewBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            CompliantCubit().postCompliant(
+                                CacheHelper().getData(key: "email"), compliantController.text,
+                                CacheHelper().getData(key: "name"));
+                          },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.sp),
                           ),

@@ -63,20 +63,20 @@ abstract class AppRouter {
           return const DrawerView(); //replace this Scaffold with a Home Screen
         });
 
-      case kMedicinesView:
-        return MaterialPageRoute(builder: (context) {
-          return const MedicinesView(); //replace this Scaffold with a Home Screen
-        });
+      // case kMedicinesView:
+      //   return MaterialPageRoute(builder: (context) {
+      //     return  MedicinesView(products: [],); //replace this Scaffold with a Home Screen
+      //   });
 
-      case kDetailsView:
-        return MaterialPageRoute(builder: (context) {
-          return const DetailsView(); //replace this Scaffold with a Home Screen
-        });
+      // case kDetailsView:
+      //   return MaterialPageRoute(builder: (context) {
+      //     return const DetailsView(); //replace this Scaffold with a Home Screen
+      //   });
 
-      case kCheckOutView:
-        return MaterialPageRoute(builder: (context) {
-          return const CheckOut(); //replace this Scaffold with a Home Screen
-        });
+      // case kCheckOutView:
+      //   return MaterialPageRoute(builder: (context) {
+      //     return const CheckOut(); //replace this Scaffold with a Home Screen
+      //   });
 
       case kContactUsView:
         return MaterialPageRoute(builder: (context) {
